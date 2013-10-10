@@ -1,6 +1,6 @@
 <?php 
-
-include_once('controller/quizz/CategoryController.php');
+session_start();
+//include_once('controller/quizz/CategoryController.php');
 
 ?>
 <!DOCTYPE html>
@@ -18,6 +18,7 @@ include_once('controller/quizz/CategoryController.php');
 
 		<nav>
 			<ul>
+				<li><a href="index.php">Home</a></li>
 				<li>Qui sommes nous?</li>
 				<li>Se logger</li>
 				<li>Créer un compte</li>
@@ -25,12 +26,13 @@ include_once('controller/quizz/CategoryController.php');
 				<li>Entrez une nouvelle question</li>
 				<li>Historique</li>
 				<li>Statistiques</li>
-				<li><a href="controller/quizz/CategoryController.php">Afficher les categories</a></li>
+				<li><a href="?page=Category">Afficher les categories</a></li>
 			</ul>
 		</nav>
 		<div id="content">
 			<?php
-				
+				if (isset($_GET['page']))
+				include_once('controller/quizz/CategoryController.php');
 			?>
 		</div>
 		
