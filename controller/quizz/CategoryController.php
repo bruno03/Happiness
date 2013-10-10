@@ -2,6 +2,7 @@
 
 require'/models/buisnessObject/Category.class.php';
 require'/models/quizz/Categorymanager.class.php';
+require'/models/ConnectionDBManager.class.php';
 
 // function chargerClasse($classname)
 // {
@@ -11,7 +12,7 @@ require'/models/quizz/Categorymanager.class.php';
 // spl_autoload_register('chargerClasse');
 
 	//acces a la BD
-	$conn = connectionDB();
+	$conn = ConnectionDBManager::getConnexion();
 	
 	//creation du modele
 	$categoryManager = new CategoryManager($conn);
@@ -21,17 +22,6 @@ require'/models/quizz/Categorymanager.class.php';
 		
 	
 	
-	// connection à la BD
-	function connectionDB(){
-	try
-	{
-	    $bdd = new PDO('mysql:host=localhost;dbname=barometer', 'root', '');
-		return $bdd; 
-	}
-	catch (Exception $e)
-	{
-	        die('Erreur : ' . $e->getMessage());
-	}
-} 
+	
         
 

@@ -1,5 +1,5 @@
 <?php
-class CategoryManager
+class QuestionManager
 {
 	private $_db; // Instance de PDO.
 	 
@@ -8,12 +8,12 @@ class CategoryManager
 		$this->setDb($db);
 	}
 	 
-	public function add(Category $category)
+	public function add(Question $question)
 	{
 	   
 	}
 	 
-	public function delete(Category $category)
+	public function delete(Question $question)
 	{
 	    // Exécute une requête de type DELETE.
 	}
@@ -46,7 +46,7 @@ class CategoryManager
 	return $category;
   	}
  
-	public function update(Category $category)
+	public function update(Question $question)
 	{
 	    // Prépare une requête de type UPDATE.
 	    // Assignation des valeurs à la requête.
