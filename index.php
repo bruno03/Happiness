@@ -1,6 +1,5 @@
 <?php 
 session_start();
-//include_once('controller/quizz/CategoryController.php');
 
 ?>
 <!DOCTYPE html>
@@ -21,8 +20,8 @@ session_start();
 				<li><a href="index.php">Home</a></li>
 				<li>Qui sommes nous?</li>
 				<li>Se logger</li>
-				<li>Créer un compte</li>
-				<li>Faire un quizz</li>
+				<li><a href="?page=Quizz">Faire un quizz</a></li>
+				<li>Faire un compte</li>
 				<li>Entrez une nouvelle question</li>
 				<li>Historique</li>
 				<li>Statistiques</li>
@@ -31,8 +30,20 @@ session_start();
 		</nav>
 		<div id="content">
 			<?php
-				if (isset($_GET['page']))
-				include_once('controller/quizz/CategoryController.php');
+				if (isset($_GET['page'])){
+					$request = $_GET['page'];
+				}
+				switch ($request)
+				{
+					case 'Category' : include_once('controller/quizz/CategoryController.php');
+					break;
+					case 'Quizz' : include_once('controller/quizz/NewQuizzController.php');
+					break; 
+				}
+				
+				
+				
+					
 			?>
 		</div>
 		

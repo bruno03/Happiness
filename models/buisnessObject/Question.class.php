@@ -10,6 +10,11 @@ class Question
     {
         return $this->id;
     }
+	
+	public function setId($id)
+    {
+        $this->id = $id;
+    }
      
     public function getCategoryId()
     {
@@ -29,5 +34,13 @@ class Question
     public function setDescription($newDescription)
     {
         $this->description = $newDescription;
+    }
+	
+	//Constructor	
+	public function __construct($id, $description, $categoryId)
+    {
+        $this->setId($id);
+        $this->setDescription($description);
+		$this->setCategoryId($categoryId);
     }
 }

@@ -26,7 +26,7 @@ class QuestionManager
 
 	public function getList()
   	{	
-    $query = "SELECT * FROM category;";
+    $query = "SELECT * FROM question;";
     
     //Exécution de la requête
     $result = $this->_db->query($query) or die(implode(" ", $conn->errorInfo()));
@@ -34,16 +34,16 @@ class QuestionManager
     //Paramétrer le mode de retour pour récupérer les données sous forme d'objet                
     $result->setFetchMode(PDO::FETCH_OBJ);
     
-    $category = array();  
+    $questions = array();  
 	      
 	while($row = $result->fetch()){
-        $category[$row->id] = new Category($row->id, $row->description);
+        $questions[$row->id] = new Question($row->id, $row->description, $row->categoryId);
         //$category[$row->id] = new Category($row);
 	}
 	
 	$result->closeCursor(); // Termine le traitement de la requête
 	
-	return $category;
+	return $questions;
   	}
  
 	public function update(Question $question)
