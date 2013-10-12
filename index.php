@@ -19,9 +19,9 @@ session_start();
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li>Qui sommes nous?</li>
-				<li>Se logger</li>
+				<li><a href="?page=Login">Se logger</a></li>
 				<li><a href="?page=Quizz">Faire un quizz</a></li>
-				<li>Faire un compte</li>
+				<li><a href="?page=Register">Faire un compte</a></li>
 				<li>Entrez une nouvelle question</li>
 				<li>Historique</li>
 				<li>Statistiques</li>
@@ -38,6 +38,10 @@ session_start();
 					case 'Category' : include_once('controller/quizz/CategoryController.php');
 					break;
 					case 'Quizz' : include_once('controller/quizz/NewQuizzController.php');
+					break; 
+					case 'Register' : include_once('controller/user/register.php');
+					break; 
+					case 'Login' : include_once('controller/user/login.php');
 					break; 
 				}
 				

@@ -6,7 +6,7 @@ class ConnectionDBManager
 	{
 		try
 		{
-	    $bdd = new PDO('mysql:host=localhost;dbname=barometer', 'root', '');
+	    $bdd = new PDO('mysql:host=localhost;dbname=barometer', 'root', '@Jnfpds12');
 		return $bdd; 
 		}
 		catch (Exception $e)
